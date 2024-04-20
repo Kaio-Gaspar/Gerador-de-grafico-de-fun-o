@@ -22,7 +22,7 @@
     </header>
 
     <main>
-        <form method="post" id="meuFormulario" class="row">
+        <form method="post" id="meuFormulario" class="row justify-content-center">
             <div class="col-sm-2">
                 <div class="mb-2">
                     {{ number_input.num_a.label }}
@@ -43,16 +43,25 @@
             </div>
             <div class="col-sm-2">
                 <br>
-                <hr>
                 <div class="mb-2">
                     {{ number_input.button_submit(class="btn btn-primary") }}
                 </div>
             </div>
         </form>
         
-        <div>
-            <img src="{{ url_for('static', filename='img/grafico.png') }}" alt="Gráfico da função quadrática">
+        <form action="{{ url_for('download_image') }}" method="get" class="justify-content-center">
+            <div class="col-sm-2">
+                <div class="mb-2 ju">
+                    <button type="submit" class="btn btn-primary">Baixar Imagem</button>
+                </div>
+            </div>
+        </form>
+        
+        
+        <div class="img d-flex justify-content-center ">
+            <img src="{{ url_for('static', filename='img/grafico.png') }}" alt="Gráfico da função quadrática" class="img-fluid">
         </div>
+        
         
         
         

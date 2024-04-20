@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_file
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
@@ -36,18 +36,30 @@ def index():
         return render_template('index.html', number_input=number_input)
     return render_template('index.html', number_input=number_input)
 
-    
+@app.route('/download-image')
+@app.route('/download-image')
+def download_image():
+    # Caminho para a imagem que você deseja baixar
+    image_path = 'static/img/grafico.png'
+    # Nome do arquivo que será baixado pelo usuário
+    filename = 'grafico.png'
+    # Retorna a imagem para o cliente fazer o download
+    return send_file(image_path, as_attachment=True)
 
 def gerar_grafico(a, b , c):
     x_vals = np.linspace(-10, 10, 100)
     y_vals = a*x_vals**2 + b*x_vals + c
-
     fig, ax = plt.subplots(figsize=(8, 6))
     ax.plot(x_vals, y_vals, label='Função Quadrática', linestyle='--')
     ax.set_title('Gráfico da função quadrática')
     plt.xlabel('X')
     plt.ylabel('Y')
+    plt.axhline(0, color='r', linewidth=1)
+    plt.axvline(0, color='r', linewidth=1)
+
     plt.grid(True)
+    #ax.set(xlim=(-10, 10), ylim=(-10, 10))
+
     
     # Verifica se o diretório 'static/img' existe e cria-o se não existir
     if not os.path.exists('static/img'):

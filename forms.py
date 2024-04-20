@@ -7,4 +7,4 @@ class NumberInput(FlaskForm):
     num_b = FloatField('Insira o valor de B', validators=[DataRequired()])
     num_c = FloatField('Insira o valor de C', validators=[DataRequired()])
 
-    button_submit = SubmitField('teste')
+    button_submit = SubmitField('Gerar Gráfico')

@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 
-h3{
+h3 {
     font-family: Oswald;
 }
 
@@ -16,6 +16,7 @@ header {
     background-color: #333;
     color: #fff;
     padding: 20px;
+    width: 100vw;
 }
 
 header h1 {
@@ -45,6 +46,7 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+    width: 100vw;
 }
 
 /* Responsividade */
@@ -62,4 +64,12 @@ footer {
         margin: 0;
         padding: 10px 0;
     }
+}
+
+/* Estilos da imagem */
+img {
+    margin: auto; /* Centraliza horizontalmente */
+    display: block; /* Remove margens verticais adicionais */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
 }
