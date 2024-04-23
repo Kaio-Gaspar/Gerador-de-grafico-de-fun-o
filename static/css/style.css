@@ -7,6 +7,9 @@ body {
     margin: 0;
     padding: 0;
 }
+h1{
+    font-family: Fjalla One;
+}
 
 h3 {
     font-family: Oswald;
